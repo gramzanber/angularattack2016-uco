@@ -1,5 +1,5 @@
 <div class="col-lg-6 col-lg-offset-3">
-  <h1 class="text-center"> Signup below to start your music management dreams </h1>
+  <h1 class="text-center"> Sign up below to start your music management dreams!!! </h1>
   <form>
     <div class="input-group input-group-sm">
       <span class="input-group-addon">
