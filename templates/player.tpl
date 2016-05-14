@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="col-xs-6 col-xs-offset-3">
-		<audio id="audioPlayer" src="{{currentSong}}" controls style="width:100%"><p>Failed to load... </p></audio>
+		<audio id="audioPlayer" ng-src="{{trustSrc(currentSong.source)}}" controls style="width:100%"><p>Failed to load... </p></audio>
 	</div>
 	<br/><br/><br/><br/>
 	<table class="table table-striped table-bordered">
