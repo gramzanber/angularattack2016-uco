@@ -4,15 +4,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
-    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
-    <script src="node_modules/zone.js/dist/zone.js"></script>
-    <script src="node_modules/reflect-metadata/Reflect.js"></script>
-    <script src="node_modules/rxjs/bundles/Rx.umd.js"></script>
-    <script src="node_modules/@angular/core/core.umd.js"></script>
-    <script src="node_modules/@angular/common/common.umd.js"></script>
-    <script src="node_modules/@angular/compiler/compiler.umd.js"></script>
-    <script src="node_modules/@angular/platform-browser/platform-browser.umd.js"></script>
-    <script src="node_modules/@angular/platform-browser-dynamic/platform-browser-dynamic.umd.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
@@ -25,53 +16,58 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.2/ui-bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.2/ui-bootstrap-tpls.min.js"></script>
     <!-- 2. Load our 'modules' -->
-    <script src='app/app.component.js'></script>
     <script src='app/main.js'></script>
     <script src="app/app.js"></script>
     <script src='app/router.js'></script>
+    <script src='controllers/Administration_Controller.js'></script>
     <script src='controllers/Controller.js'></script>
+    <script src='controllers/Login_Controller.js'></script>
+    <script src='controllers/playerController.js'></script>
+    <script src='controllers/Register_Controller.js'></script>
+    <script src='controllers/Settings_Controller.js'></script>
+    <script src='controllers/Upload_Controller.js'></script>
   </head>
   <!-- 3. Display the application -->
   <body>
-<nav class="navbar navbar-inverse" style="border-radius:0;font-family:'Courier New'; font-size: 40px; background-image: url('logo.png'); background-size: cover; min-height: 200px; margin-bottom: 20px;" ng-controller="navbar">
-    <div class="container-fluid">
-        <div class="navbar-brand navbar-right" style="color:white; font-size:30px; background-color:#212121"><strong> Music Cloud Madness </strong>
-            </div>
+    <nav class="navbar navbar-inverse" style="border-radius:0;font-family:'Courier New'; font-size: 40px; background-image: url('logo.png'); background-size: cover; min-height: 200px; margin-bottom: 20px;" ng-controller="navbar">
+      <div class="container-fluid">
+        <div class="navbar-brand navbar-right" style="color:white; font-size:30px; background-color:#212121; border-bottom-left-radius: 5px"><strong> Music Cloud Madness </strong> </div>
 			<div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-		<br><br>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li ui-sref-active="active" ng-if="!logged_in">
-                    <a ui-sref="login">LOGIN</a>
-                </li>
-                <li ui-sref-active="active" ng-if="!logged_in">
-                    <a ui-sref="register">REGISTER</a>
-                </li>
-                <li ui-sref-active="active" ng-if="logged_in">
-                    <a ui-sref="player">PLAYER</a>
-                </li>
-				        <li ui-sref-active="active" ng-if="logged_in">
-                    <a ui-sref="settings">SETTINGS</a>
-                </li>
-                <li ui-sref-active="active" ng-if="logged_in">
-                    <a ui-sref="upload">UPLOAD</a>
-                </li>
-                <li ui-sref-active="active" ng-if="is_admin">
-                    <a ui-sref="administration">ADMIN</a>
-                </li>
-          </ul>
-        </div>
-    </div>
-</nav>
-
-    <div class="row" style="margin-top:60px">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <br /><br />
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li ui-sref-active="active" ng-if="!logged_in">
+              <a ui-sref="login">LOGIN</a>
+          </li>
+          <li ui-sref-active="active" ng-if="!logged_in">
+              <a ui-sref="register">REGISTER</a>
+          </li>
+          <li ui-sref-active="active" ng-if="logged_in">
+              <a ui-sref="player">PLAYER</a>
+          </li>
+	        <li ui-sref-active="active" ng-if="logged_in">
+              <a ui-sref="settings">SETTINGS</a>
+          </li>
+          <li ui-sref-active="active" ng-if="logged_in">
+              <a ui-sref="upload">UPLOAD</a>
+          </li>
+          <li ui-sref-active="active" ng-if="is_admin">
+              <a ui-sref="administration">ADMIN</a>
+          </li>
+          <li ng-if="logged_in">
+              <a ng-click="logout()" ui-sref="login">LOGOUT</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="row" style="margin-top:30px">
       <div class="container">
         <div ui-view></div>
       </div>
