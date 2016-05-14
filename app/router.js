@@ -12,7 +12,7 @@
             $stateProvider
                 .state('login', {
                     url: "/",
-                    templateUrl: "templates/index.tpl",
+                    templateUrl: "templates/login.tpl",
                     //controller: 'fileController'
                 })
                 .state('upload', {
@@ -28,6 +28,16 @@
                 .state('player', {
                     url: "/player",
                     templateUrl: "templates/player.tpl",
+                    //controller: 'fileController'
+                })
+                .state('settings', {
+                    url: "/settings",
+                    templateUrl: "templates/settings.tpl",
+                    //controller: 'fileController'
+                })
+                .state('register', {
+                    url: "/register",
+                    templateUrl: "templates/register.tpl",
                     //controller: 'fileController'
                 });
         });

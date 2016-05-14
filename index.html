@@ -37,6 +37,9 @@
         <div class="navbar-brand" style="margin-left:10px">
             AngularATTACK 2016 - Music Cloud Madness
         </div>
+        <div ng-if="{{logged_in}}" class="navbar-brand navbar-right">
+            <ng-button ng-click="logout()"> Logout {{user}} </ng-button>
+        </div>
       </div>
     </nav>
     <div class="row">
