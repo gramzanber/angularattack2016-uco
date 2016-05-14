@@ -13,5 +13,9 @@
 				year: '2016',
 				url: 'www.codeeveryday.org'
 			}
+			
+			$scope.play = function(song){
+				$scope.currentSong = song;
+			}
 		});
 })();
