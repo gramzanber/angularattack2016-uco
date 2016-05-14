@@ -40,14 +40,14 @@
       <span class="input-group-addon">
         <span class="glyphicon glyphicon-music"></span>
       </span>
-      <input class="form-control" ng-model="number_songs" type="text" value="{{users.number_songs}}">
+      <input class="form-control" ng-model="number_songs" type="text" value="{{users.number_songs}}" disabled>
     </div>
 		<br />
     <div class="input-group input-group-sm">
       <span class="input-group-addon">
         <span class="glyphicon glyphicon-music"></span>
       </span>
-      <input class="form-control" ng-model="number_songs" type="text" value="{{users.favorite_song}}" disabled>
+      <input class="form-control" ng-model="favorite_song" type="text" value="{{users.favorite_song}}" disabled>
     </div>
   </form>
   <a ng-click="add_user()" class="btn btn-primary" style="width: 100%">Register</a>
