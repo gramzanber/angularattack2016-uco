@@ -3,7 +3,7 @@
 
     angular
         .module('app')
-        .controller('toDoController', function playerController($scope, $http, $q, $state, $window, $interval) {
+        .controller('playerController', function playerController($scope, $http, $q, $state, $window, $interval) {
 			
 			$scope.songs = [];
 			$scope.songs[0] = {
