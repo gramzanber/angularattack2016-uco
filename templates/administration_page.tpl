@@ -11,11 +11,11 @@
 		</tr>
 		<tr ng-repeat="users in users">
 			<td>{{users.username}}</td>
-			<td><ng-button ng-click="reset_password({{users.username}})"> Reset Password </ng-button></td>
+			<td><ng-button ng-click="reset_password(user)"> Reset Password </ng-button></td>
 			<td>{{users.email}}</td>
 			<td>{{users.number_songs}}</td>
-      <td><ng-button ng-click="edit_user({{users.username}})"> Edit </ng-button></td>
-			<td><ng-button ng-click="delete_user({{users.username}})"> Delete </ng-button></td>
+      <td><ng-button ng-click="edit_user(user)"> Edit </ng-button></td>
+			<td><ng-button ng-click="delete_user(user)"> Delete </ng-button></td>
 		</tr>
 	</div>
 </div>

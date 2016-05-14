@@ -25,7 +25,6 @@
     }
     })
     .controller('login_Controller', function($scope, $http, $q, $state, $window, $interval) {
-
     $scope.register = function(){
       $state.go('register');
     }
@@ -35,28 +34,22 @@
     }
     })
     controller('upload_Controller', function($scope, $http, $q, $state, $window, $interval) {
-
-    $scope.register = function(user){
-    }
-    $scope.authenticate = function(user,password){
+    $scope.add_song = function(){
     }
     })
     controller('administration_Controller', function($scope, $http, $q, $state, $window, $interval) {
-
-    $scope.register = function(user){
+    $scope.reset_password = function(user){
     }
-    $scope.authenticate = function(user,password){
+    $scope.edit_user = function(user){
+    }
+    $scope.delete_user = function(user){
     }
     })
     controller('settings_Controller', function($scope, $http, $q, $state, $window, $interval) {
-
-    $scope.register = function(user){
-    }
-    $scope.authenticate = function(user,password){
+    $scope.update_user = function(user){
     }
     })
     controller('register_Controller', function($scope, $http, $q, $state, $window, $interval) {
-
     $scope.login = function(){
       $state.go('/');
     }

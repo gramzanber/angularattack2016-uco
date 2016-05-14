@@ -50,7 +50,7 @@
       <input class="form-control" ng-model="favorite_song" type="text" value="{{users.favorite_song}}" disabled>
     </div>
   </form>
-  <a ng-click="add_user()" class="btn btn-primary" style="width: 100%">Register</a>
+  <a ng-click="update_user(user)" class="btn btn-primary" style="width: 100%">Save Changes</a>
 </div>
 <div class="container">
 	<h2> SETTINGS </h2>
