@@ -33,11 +33,11 @@
       $scope.is_admin = false;
     }
     })
-    controller('upload_Controller', function($scope, $http, $q, $state, $window, $interval) {
+    .controller('upload_Controller', function($scope, $http, $q, $state, $window, $interval) {
     $scope.add_song = function(){
     }
     })
-    controller('administration_Controller', function($scope, $http, $q, $state, $window, $interval) {
+    .controller('administration_Controller', function($scope, $http, $q, $state, $window, $interval) {
     $scope.reset_password = function(user){
     }
     $scope.edit_user = function(user){
@@ -45,13 +45,13 @@
     $scope.delete_user = function(user){
     }
     })
-    controller('settings_Controller', function($scope, $http, $q, $state, $window, $interval) {
+    .controller('settings_Controller', function($scope, $http, $q, $state, $window, $interval) {
     $scope.update_user = function(user){
     }
     })
-    controller('register_Controller', function($scope, $http, $q, $state, $window, $interval) {
+    .controller('register_Controller', function($scope, $http, $q, $state, $window, $interval) {
     $scope.login = function(){
-      $state.go('/');
+      $state.go('login');
     }
     $scope.new_user = function(){
     }
