@@ -42,9 +42,21 @@
   </head>
   <!-- 3. Display the application -->
   <body>
+  
+  <nav class="navbar navbar-inverse">
+    <div class="navbar-header">
+        <div class="navbar-brand" style="margin-left:10px">
+            AngularATTACK 2016
+        </div>
+    </div>
+</nav>
  <!--   <my-app>
       Loading...
     </my-app> -->
-	<div ui-view></div>
+	<div class="row">
+        <div class="span12 ui-view-container">
+            <div ui-view></div>
+        </div>
+    </div> 
   </body>
 </html>
