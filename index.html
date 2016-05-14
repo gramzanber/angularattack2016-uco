@@ -33,11 +33,11 @@
   </head>
   <!-- 3. Display the application -->
   <body>
-<nav class="navbar navbar-inverse" style="border-radius:0;font-family:'Courier New'">
+<nav class="navbar navbar-inverse" style="border-radius:0;font-family:'Courier New'; font-size: 40px; background-image: url('logo.png'); background-size: cover; height: 200px; margin-bottom: 20px;">
     <div class="container-fluid">
-        <div class="navbar-header">
-            <div class="navbar-brand"><strong> Music Cloud Madness </strong>
+        <div class="navbar-brand navbar-right" style="color:white; font-size:30px; background-color:#212121"><strong> Music Cloud Madness </strong>
             </div>
+			<div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -45,6 +45,7 @@
                 <span class="icon-bar"></span>
             </button>
         </div>
+		<br><br>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li ui-sref-active="active">
@@ -70,7 +71,7 @@
     </div>
 </nav>
 
-    <div class="row">
+    <div class="row" style="margin-top:60px">
       <div class="container">
         <div ui-view></div>
       </div>
