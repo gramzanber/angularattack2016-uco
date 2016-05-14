@@ -13,32 +13,32 @@
                 .state('login', {
                     url: "/",
                     templateUrl: "templates/login.tpl",
-                    //controller: 'fileController'
+                    controller: 'login_Controller',
                 })
                 .state('upload', {
                     url: "/upload",
                     templateUrl: "templates/upload.tpl",
-                    //controller: 'fileController'
+                    controller: 'upload_Controller',
                 })
                 .state('administration', {
                     url: "/administration",
                     templateUrl: "templates/administration_page.tpl",
-                    //controller: 'fileController'
+                    controller: 'administration_Controller',
                 })
                 .state('player', {
                     url: "/player",
                     templateUrl: "templates/player.tpl",
-                    controller: 'playerController'
+                    controller: 'playerController',
                 })
                 .state('settings', {
                     url: "/settings",
                     templateUrl: "templates/settings.tpl",
-                    //controller: 'fileController'
+                    controller: 'settings_Controller',
                 })
                 .state('register', {
                     url: "/register",
                     templateUrl: "templates/register.tpl",
-                    //controller: 'fileController'
+                    controller: 'register_Controller',
                 });
         });
 })();

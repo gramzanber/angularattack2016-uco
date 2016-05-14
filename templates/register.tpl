@@ -35,6 +35,8 @@
       </span>
       <input class="form-control" ng-model="email" type="email" placeholder="Retype email address..." required>
     </div>
+    <br />
+    <button ng-click="new_user()" class="btn btn-primary" style="width: 100%" type="submit">Register</button>
   </form>
-  <a ng-click="add_user()" class="btn btn-primary" style="width: 100%">Register</a>
+  <a ng-click="login()" class="btn btn-success" style="width: 100%">Login</a>
 </div>

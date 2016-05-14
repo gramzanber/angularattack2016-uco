@@ -29,11 +29,11 @@
     <script src='app/main.js'></script>
     <script src="app/app.js"></script>
     <script src='app/router.js'></script>
-	<script src='controllers/playerController.js'></script>
+    <script src='controllers/Controller.js'></script>
   </head>
   <!-- 3. Display the application -->
   <body>
-<nav class="navbar navbar-inverse" style="border-radius:0;font-family:'Courier New'; font-size: 40px; background-image: url('logo.png'); background-size: cover; min-height: 200px; margin-bottom: 20px;">
+<nav class="navbar navbar-inverse" style="border-radius:0;font-family:'Courier New'; font-size: 40px; background-image: url('logo.png'); background-size: cover; min-height: 200px; margin-bottom: 20px;" ng-controller="navbar">
     <div class="container-fluid">
         <div class="navbar-brand navbar-right" style="color:white; font-size:30px; background-color:#212121"><strong> Music Cloud Madness </strong>
             </div>
@@ -48,22 +48,22 @@
 		<br><br>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li ui-sref-active="active">
+                <li ui-sref-active="active" ng-if="!logged_in">
                     <a ui-sref="login">LOGIN</a>
                 </li>
-                <li ui-sref-active="active">
+                <li ui-sref-active="active" ng-if="!logged_in">
                     <a ui-sref="register">REGISTER</a>
                 </li>
-                <li ui-sref-active="active">
+                <li ui-sref-active="active" ng-if="logged_in">
                     <a ui-sref="player">PLAYER</a>
                 </li>
-				<li ui-sref-active="active">
+				        <li ui-sref-active="active" ng-if="logged_in">
                     <a ui-sref="settings">SETTINGS</a>
                 </li>
-                <li ui-sref-active="active">
+                <li ui-sref-active="active" ng-if="logged_in">
                     <a ui-sref="upload">UPLOAD</a>
                 </li>
-                <li ui-sref-active="active">
+                <li ui-sref-active="active" ng-if="is_admin">
                     <a ui-sref="administration">ADMIN</a>
                 </li>
           </ul>
