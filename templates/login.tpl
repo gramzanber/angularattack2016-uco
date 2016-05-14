@@ -1,4 +1,4 @@
-<div class="col-lg-6 col-lg-offset-3">
+<div class="col-xs-6 col-xs-offset-3">
   <form >
     <div class="input-group input-group-sm">
       <span class="input-group-addon">
