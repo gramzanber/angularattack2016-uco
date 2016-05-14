@@ -32,16 +32,43 @@
   </head>
   <!-- 3. Display the application -->
   <body>
-    <nav class="navbar navbar-inverse" style="border-radius:0">
-      <div class="navbar-header">
-        <div class="navbar-brand" style="margin-left:10px">
-            AngularATTACK 2016 - Music Cloud Madness
+<nav class="navbar navbar-inverse" style="border-radius:0">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <div class="navbar-brand"><strong> Music Cloud Madness </strong>
+            </div>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
         </div>
-        <div ng-if="{{logged_in}}" class="navbar-brand navbar-right">
-            <ng-button ng-click="logout()"> Logout {{user}} </ng-button>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li ui-sref-active="active">
+                    <a ui-sref="login">LOGIN</a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="register">REGISTER</a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="player">PLAYER</a>
+                </li>
+				<li ui-sref-active="active">
+                    <a ui-sref="settings">SETTINGS</a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="upload">UPLOAD</a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="administration">ADMIN</a>
+                </li>
+          </ul>
         </div>
-      </div>
-    </nav>
+    </div>
+</nav>
+
     <div class="row">
       <div class="container">
         <div ui-view></div>
