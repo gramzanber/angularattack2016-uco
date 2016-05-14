@@ -28,7 +28,7 @@
                 .state('player', {
                     url: "/player",
                     templateUrl: "templates/player.tpl",
-                    //controller: 'fileController'
+                    controller: 'playerController'
                 })
                 .state('settings', {
                     url: "/settings",

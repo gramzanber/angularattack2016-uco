@@ -3,7 +3,7 @@
 		<audio id="audioPlayer" src="" controls style="width:100%"><p>Failed to load... </p></audio>
 	</div> 
 	<br/><br/>
-	<table class="table table-striped table-bordered">
+	<table class="table table-striped table-bordered table-inverse">
 		<tr>
 			<th>Artist</th>
 			<th>Title</th>
