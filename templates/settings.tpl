@@ -1,5 +1,5 @@
-<div class="col-lg-6 col-lg-offset-3">
-  <h1 class="text-center"> View User Settings </h1>
+<div class="col-xs-6 col-xs-offset-3">
+  <h1 class="text-center"> <strong>ACCOUNT SETTINGS</strong> </h1>
   <form>
     <div class="input-group input-group-sm">
       <span class="input-group-addon">
@@ -50,10 +50,12 @@
       <input class="form-control" ng-model="favorite_song" type="text" value="{{users.favorite_song}}" disabled>
     </div>
   </form>
-  <a ng-click="update_user(user)" class="btn btn-primary" style="width: 100%">Save Changes</a>
-</div>
-<div class="container">
-	<h2> SETTINGS </h2>
+  <div class="text-center" style="border: groove; border-radius: 5px; padding: 10px; margin: 20px">
+	<h2> <strong>PLAYER SETTINGS</strong> </h2>
 	<input type="radio"/> Track most played. <br/>
 	<input type="radio"/> Keep last played song in player. <br/>
+  </div>
+  <a ng-click="update_user(user)" class="btn btn-primary" style="width: 100%; background-color: #301C16">Save Changes</a>
 </div>
+
+
