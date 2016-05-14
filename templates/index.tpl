@@ -1,6 +1,6 @@
-<div layout="row" layout-align="center">
-  <h1>AngularAttack 2016</h1>
-  <div layout="row" layout-align="center">
+<div layout="row">
+  <div flex>
+    <h1>AngularAttack 2016</h1>
     <label> Username </label>
     <input type="text"/>
     <br />
