@@ -15,15 +15,20 @@
                     templateUrl: "templates/search.tpl",
                     controller: 'search_Controller',
                 })
-                .state('player', {
-                    url: "/upload",
-                    templateUrl: "templates/player.tpl",
-                    controller: 'playerController',
-                })
-                .state('socialmedia', {
+                .state('socialMedia', {
                     url: "/SocialMediaPrescence",
                     templateUrl: "templates/socialmedia.tpl",
                     controller: 'socialmediaController'
+                })
+                .state('popularAlbums', {
+                    url: "/popularAlbums",
+                    templateUrl: "templates/popularAlbums.tpl",
+                    controller: 'popularAlbumsController',
+                })
+                .state('player', {
+                    url: "/playlist",
+                    templateUrl: "templates/player.tpl",
+                    controller: 'playerController',
                 })
                 ;
         });

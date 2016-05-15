@@ -40,12 +40,15 @@
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
           <li>
-              <a ui-sref="player">Online Prescense</a>
+              <a ui-sref="search">Search</a>
           </li>
-          <li>
-              <a ui-sref="register">Popular Albums</a> <!--Top 5-->
+          <li ng-if="alreadySearched">
+              <a ui-sref="socialMedia">Online Prescense</a>
           </li>
-          <li>
+          <li ng-if="alreadySearched">
+              <a ui-sref="popularAlbums">Popular Albums</a> <!--Top 5-->
+          </li>
+          <li ng-if="alreadySearched">
               <a ui-sref="player">Playlist</a>
           </li>
         </ul>

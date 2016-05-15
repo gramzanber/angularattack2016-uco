@@ -1,7 +1,7 @@
-<a ng-click="register()" class="btn btn-success" style="width: 100%; background-color: #301C16">Search some more!!</a>
 <div class="container">
+	<audio id="audioPlayer" ng-src="{{trustSrc(currentSong.source)}}" controls style="width:100%"><p>Failed to load... </p></audio>
+	<br /><br />
 	<table class="table table-bordered" style="width:70%; margin-left:15%; table-layout: fixed; background-color:rgb(71,71,71); color: white; border-radius:0 0 10px 10px">
-		<tr> <audio id="audioPlayer" ng-src="{{trustSrc(currentSong.source)}}" controls style="width:100%"><p>Failed to load... </p></audio> </tr>
 		<tr>
 			<th style="text-align:center">Play</th>
 			<th style="text-align:center">Artist</th>
