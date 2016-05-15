@@ -20,6 +20,11 @@
                     templateUrl: "templates/player.tpl",
                     controller: 'playerController',
                 })
+                .state('socialmedia', {
+                    url: "/SocialMediaPrescence",
+                    templateUrl: "templates/socialmedia.tpl",
+                    controller: 'socialmediaController'
+                })
                 ;
         });
 })();

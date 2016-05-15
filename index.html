@@ -1,6 +1,6 @@
 <html ng-app='app'>
   <head>
-    <title> Team UCO will rock you</title>
+    <title> Team UCO</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
@@ -25,10 +25,31 @@
   </head>
   <!-- 3. Display the application -->
   <body>
-    <nav class="navbar navbar-inverse" style="border-radius:0;font-family:'Courier New'; font-size: 40px; background-image: url('logo.png'); background-size: cover; min-height: 200px; margin-bottom: 20px;">
-      <div class="container">
-        <div class="navbar-brand navbar-right text-center"><strong> Music Search Madness </strong> </div>
-			</div>
+    <nav class="navbar navbar-inverse" style="border-radius:0;font-family:'Courier New'; font-size: 40px; background-image: url('logo.png'); background-size: cover; min-height: 200px; margin-bottom: 20px;" ng-controller="navbar">
+      <div class="container-fluid">
+        <div class="navbar-brand navbar-right" style="color:white; font-size:30px; background-color:#212121; border-bottom-left-radius: 5px"><strong> Music Cloud Madness </strong> </div>
+			<div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <br /><br />
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li>
+              <a ui-sref="player">Online Prescense</a>
+          </li>
+          <li>
+              <a ui-sref="register">Popular Albums</a> <!--Top 5-->
+          </li>
+          <li>
+              <a ui-sref="player">Playlist</a>
+          </li>
+        </ul>
+      </div>
     </nav>
     <div class="row" style="margin-top:30px; min-height: 420px">
       <div class="container">
