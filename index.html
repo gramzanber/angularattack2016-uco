@@ -29,7 +29,7 @@
   </head>
   <!-- 3. Display the application -->
   <body>
-    <nav class="navbar navbar-inverse" style="border-radius:0;font-family:'Courier New'; font-size: 40px; background-image: url('logo.png'); background-size: cover; min-height: 200px; margin-bottom: 20px;" ng-controller="navbar">
+    <nav class="navbar navbar-inverse" style="border-radius:0;font-family:'Courier New'; font-size: 40px; background-image: url('logo.png'); background-size: cover; min-height: 200px; margin-bottom: 0" ng-controller="navbar">
       <div class="container-fluid">
         <div class="navbar-brand navbar-right" style="color:white; font-size:30px; background-color:#212121; border-bottom-left-radius: 5px"><strong> Music Cloud Madness </strong> </div>
 			<div class="navbar-header">
@@ -58,8 +58,8 @@
         </ul>
       </div>
     </nav>
-    <div class="row" style="margin-top:30px; min-height: 420px">
-      <div class="container">
+    <div class="row">
+      <div class="container" style="padding-top: 20px">
         <div ui-view></div>
       </div>
     </div>

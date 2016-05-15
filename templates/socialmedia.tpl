@@ -1,7 +1,3 @@
-<button ui-sref="popularAlbums" class="btn btn-primary" style="width: 49%; background-color: #301C16">Popular Albums</button>
-<button ui-sref="player" class="btn btn-primary" style="width: 49%; background-color: #301C16">Playlist</button>
-<br /><br />
-
 <div ng-if="links" class="container" style="text-align:center;" class="thumbnail">
 	<label class="text-center" style="width:100%">Framed Links</label>
 	<a ng-if="links.official" data-toggle="collapse" data-target="#official" class="image">
