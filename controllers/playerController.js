@@ -6,10 +6,11 @@
     
 	var player = angular.element(document.getElementById("audioPlayer"));
 	var song;
+	$scope.audio = new Audio();
 	
 	$scope.paused = true;
 	$scope.currentSong = {
-		source: "http://www.mbr-pwrc.usgs.gov/id/htmwav/h5810so.mp3"
+		url: "https://ia800309.us.archive.org/28/items/Mp3Songs_175/musaa01www.songs.pk.mp3"
 	}
 	$scope.songs = [];
     $scope.songs[0] = {
@@ -17,7 +18,7 @@
       title: 'Hacking Away',
       album: 'Why am I still awake?',
       year: '2016',
-      url: 'http://www.mbr-pwrc.usgs.gov/id/htmwav/h5810so.mp3',
+      url: 'https://ia800309.us.archive.org/28/items/Mp3Songs_175/musaa01www.songs.pk.mp3',
 	  paused: true
     }
 	$scope.songs[1] = {
@@ -30,26 +31,32 @@
 	}
 	
 	$scope.playSong = function(thisSong){
-		if (song) {
-			if (!song.paused){
-				song.pause();
+		$scope.currentSong = thisSong;
+		if ($scope.audio) {
+			if (!$scope.audio.paused){
+				$scope.audio.pause();
 				$timeout(function() {
-					if (song.src != thisSong.url){
-						song = new Audio(thisSong.url);
-						song.load();
-						song.play();
+					if ($scope.audio.src != thisSong.url){ 
+						$scope.audio = new Audio(thisSong.url);
+						$scope.audio.load();
+						$scope.audio.play();
 					} else {
 						thisSong.paused = true;
 					}			
 				}, 150);
 			} else {
-				song.play();
-				thisSong.paused = false;
+				$timeout(function() {
+					thisSong.paused = false;
+					$scope.audio.play();
+				}, 150);
 			}
 		} else {
-			song = new Audio(thisSong.url);
-			song.play();
-			thisSong.paused = false;
+			$timeout(function() {
+				$scope.audio.src = thisSong.url;
+				thisSong.paused = false;
+				$scope.audio.load();
+				$scope.audio.play();
+			}, 150);
 		}
 	}
 	

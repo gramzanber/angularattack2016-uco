@@ -1,6 +1,6 @@
 <div class="container">
 	<table class="table table-bordered" style="width:70%; margin-left:15%; table-layout: fixed; background-color:rgb(71,71,71); color: white; border-radius:0 0 10px 10px">
-		<tr> <audio id="audioPlayer" ng-src="{{trustSrc(currentSong.source)}}" controls style="width:100%"><p>Failed to load... </p></audio> </tr>
+		<tr> <audio id="audioPlayer" ng-src="{{trustSrc(currentSong.source)}}" controls style="width:100%"><p>Failed to load... </p></audio> </tr> 
 		<tr>
 			<th style="text-align:center">Play</th>
 			<th style="text-align:center">Artist</th>
