@@ -2,86 +2,31 @@
     'use strict';
     angular
     .module('app')
-    .controller('playerController', function playerController($scope, $sce, $http, $q, $state, $window, $timeout) {
+    .controller('playerController', function playerController($scope, $rootScope, $http, $q, $state, $window) {
 
-	var player = angular.element(document.getElementById("audioPlayer"));
-	var song;
-	$scope.audio = new Audio();
+			if ($rootScope.artistId) $window.sessionStorage.id = $rootScope.artistId;
+			if ($rootScope.artistName) $window.sessionStorage.name = $rootScope.artistName;
+			var id = $rootScope.artistId = $window.sessionStorage.id; console.log(id);
+			$rootScope.alreadySearched = true;
+		
+	  getTopVideo().then(
+    		function(response) {
+					console.log("https://www.youtube.com/watch?v=" + response.data[0].track_youtube_id); //Youtube video
+    	}
+    );
 
-	$scope.paused = true;
-	$scope.currentSong = {
-		url: "https://ia800309.us.archive.org/28/items/Mp3Songs_175/musaa01www.songs.pk.mp3"
-	}
-	$scope.songs = [];
-    $scope.songs[0] = {
-      artist: 'Omid',
-      title: 'Hacking Away',
-      album: 'Why am I still awake?',
-      year: '2016',
-      url: 'https://ia800309.us.archive.org/28/items/Mp3Songs_175/musaa01www.songs.pk.mp3',
-	  paused: true
-    }
-	$scope.songs[1] = {
-		artist: 'Drew',
-		title: 'Backend Baby',
-		album: 'All about that back',
-		year: '2017',
-		url: 'https://ia800309.us.archive.org/28/items/Mp3Songs_175/actionreplayy04www.songs.pk.mp3',
-		paused: true
-	}
-  $scope.songs[2] = {
-		artist: 'Tyrel',
-		title: 'What I get no songs',
-		album: 'Are we done yet?',
-		year: '1990',
-		url: 'https://ia800309.us.archive.org/28/items/Mp3Songs_175/actionreplayy04www.songs.pk.mp3',
-		paused: true
-	}
-
-	$scope.playSong = function(thisSong){
-		$scope.currentSong = thisSong;
-		if ($scope.audio) {
-			if (!$scope.audio.paused){
-				$scope.audio.pause();
-				$timeout(function() {
-					if ($scope.audio.src != thisSong.url){
-						$scope.audio = new Audio(thisSong.url);
-						$scope.audio.load();
-						$scope.audio.play();
-					} else {
-						thisSong.paused = true;
-					}
-				}, 150);
-			} else {
-				$timeout(function() {
-					thisSong.paused = false;
-					$scope.audio.play();
-				}, 150);
-			}
-		} else {
-			$timeout(function() {
-				$scope.audio.src = thisSong.url;
-				thisSong.paused = false;
-				$scope.audio.load();
-				$scope.audio.play();
-			}, 150);
-		}
-	}
-
-	$scope.trustSrc = function(source) {
-		return $sce.trustAsResourceUrl(source);
-	}
-
-  $scope.search = function() {
-		$state.go("search");
-	}
-
-  $scope.social_media = function(){
-    $location.url('/SocialMediaPrescence');
-  }
-
-  $scope.popular_album = function(){
-    $location.url('/popularAlbums');
-  }
+	function getTopVideo() {
+            var deferred = $q.defer();
+            $http.get("http://api.musicgraph.com/api/v2/playlist?api_key=6d26fd60ee690f2cdf287654182c69f2&artist_ids="+id+"&limit=1").then(
+                function handleSuccess(response) {
+                    console.log('success');
+                    deferred.resolve(response.data);
+                },
+                function handleError(response) {
+                    console.log('failure');
+                }
+            );
+            return deferred.promise;
+        }
     });
 })();
