@@ -2,9 +2,9 @@
 <button ng-click="playlist()" class="btn btn-primary" style="width: 49%; background-color: #7A3014">Playlist</button>
 <br /><br />
 <div class="container">
-  <span>Albums:</span>
+  <h2 class="text-center">ALBUMS</h2>
 </div>
-<table class="table table-striped table-bordered">
+<table class="table">
 	<tr>
 		<th>Title</th>
 		<th># of Tracks</th>

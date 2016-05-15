@@ -2,8 +2,7 @@
 <button ng-click="playlist()" class="btn btn-primary" style="width: 49%; background-color: #7A3014">Playlist</button>
 <br /><br />
 
-<h2 ng-hide="links.length == 0" class="text-center">There are no outside links provided for this artist.</h2>
-<div ng-if="links.length > 0" class="container" style="text-align:center;" class="thumbnail">
+<div ng-if="links" class="container" style="text-align:center;" class="thumbnail">
 	<label class="text-center" style="width:100%">Framed Links</label>
 	<a ng-if="links.official" data-toggle="collapse" data-target="#official" class="image">
 		<img src="/images/Manager-48.png" alt="Official Site">
@@ -19,7 +18,7 @@
 	</a>
 </div>
 
-<div ng-if="links.length > 0" class="container" style="text-align:center;" class="thumbnail">
+<div ng-if="links" class="container" style="text-align:center;" class="thumbnail">
 	<label class="text-center" style="width:100%">Outer Links</label>
 	<a ng-if="links.lastfm" target="_blank" href="{{links.lastfm}}" class="image">
 		<img src="/images/Lastfm-48.png" alt="Last.fm" style="width:70px;height:70px;border:0;">

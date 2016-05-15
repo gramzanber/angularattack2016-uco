@@ -9,8 +9,6 @@
 		var id = $rootScope.artistId = $window.sessionStorage.id; console.log(id);
 		$rootScope.alreadySearched = true;
 		
-		$scope.links = {};
-		
 		$scope.popular_album = function(){
 			$state.go('popularAlbums');
 		}
@@ -28,6 +26,7 @@
 
 		getOnlinePrescence().then(
             function(response) {
+				$scope.links = {};
 				$scope.links.official = $sce.trustAsResourceUrl(response.data.official_url[0]);
 					console.log(response.data.official_url[0]); //official
 				$scope.links.lastfm = $sce.trustAsResourceUrl(response.data.lastfm_url[0]);
@@ -46,7 +45,7 @@
                     console.log(response.data.youtube_url[0]); //youtube
 				$scope.links.instagram = $sce.trustAsResourceUrl(response.data.instagram_url[0]);
                     console.log(response.data.instagram_url[0]); //instagram
-                }
+			}
         );
 			
 		getFacebookMetrics().then(
