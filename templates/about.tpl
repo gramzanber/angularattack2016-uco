@@ -1,8 +1,13 @@
 <div class="container">
   <div ng-repeat="programmer in programmers">
-    <div>{{programmer.picture}}</div>
-    <div>{{programmer.name}}</div>
-    <div>{{programmer.bio}}</div>
+    <div>
+      <img src="{{programmer.picture}}" />
+    </div>
+    <div>
+      Name: {{programmer.name}}
+    </div>
+    <div>
+      Bio: {{programmer.bio}}
+    </div>
   </div>
 </div>
-{{programmers}}
