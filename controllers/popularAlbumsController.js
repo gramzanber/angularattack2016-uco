@@ -7,6 +7,7 @@
 		if ($rootScope.artistName) $window.sessionStorage.name = $rootScope.artistName;
 		if ($rootScope.artistId) $window.sessionStorage.id = $rootScope.artistId;
 		var name = $rootScope.artistName = $window.sessionStorage.name;
+		var id = $rootScope.artistId = $window.sessionStorage.id; console.log(id);
 		$rootScope.alreadySearched = true;
 
 		getTopAlbums().then(
