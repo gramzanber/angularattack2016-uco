@@ -61,7 +61,7 @@
     getArtists(param).then(
               function(response) {
                 if(param) {
-                for(var i = 0; i < 100; i++)
+                for(var i = 0; i < 5; i++)
                 {
                   var value = "";
 
@@ -77,7 +77,7 @@
 
     function getArtists(param) {
             var deferred = $q.defer();
-            $http.get("http://api.musicgraph.com/api/v2/artist/suggest?api_key=6d26fd60ee690f2cdf287654182c69f2&prefix="+param+"&limit=100").then(
+            $http.get("http://api.musicgraph.com/api/v2/artist/suggest?api_key=6d26fd60ee690f2cdf287654182c69f2&prefix="+param+"&limit=5").then(
                 function handleSuccess(response) {
                     console.log('success');
                     deferred.resolve(response.data);
