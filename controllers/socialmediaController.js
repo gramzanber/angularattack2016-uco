@@ -2,20 +2,23 @@
     'use strict';
     angular
     .module('app')
-    .controller('socialmediaController', function socialmediaController($scope, $rootScope, $http, $q, $state, $window, $location) {
+    .controller('socialmediaController', function socialmediaController($scope, $rootScope, $http, $q, $state, $window) {
 
+		if ($rootScope.artistId) $window.sessionStorage.id = $rootScope.artistId;
+		if ($rootScope.artistName) $window.sessionStorage.name = $rootScope.artistName;
+		var id = $rootScope.artistId = $window.sessionStorage.id; console.log(id);
+		$rootScope.alreadySearched = true;
+		
 		$scope.links = {};
-
+		
 		$scope.popular_album = function(){
-			$location.url('/popularAlbums');
+			$state.go('popularAlbums');
 		}
 
 		$scope.playlist = function(){
-			$location.url('/playlist');
+			$state.go('player');
 		}
-
-		console.log("ARTIST ID: " + $rootScope.artistId);
-
+		
 		getSocial().then(
             function(data) {
                 $scope.spotifyurl = data;
@@ -45,7 +48,7 @@
                     console.log(response.data.instagram_url[0]); //instagram
                 }
         );
-
+			
 		getFacebookMetrics().then(
                 function(response) {
 					console.log(response.data.facebook.likes.data.value); //likes
@@ -69,10 +72,10 @@
 					console.log(response.data.twitter.followers.data.value); //followers
                 }
         );
-
+		
 		function getSocial() {
             var deferred = $q.defer();
-            $http.get("http://api.musicgraph.com/api/v2/artist/"+$rootScope.artistId+"/metrics?api_key=6d26fd60ee690f2cdf287654182c69f2").then(
+            $http.get("http://api.musicgraph.com/api/v2/artist/"+id+"/metrics?api_key=6d26fd60ee690f2cdf287654182c69f2").then(
                 function handleSuccess(response) {
                     console.log('success');
                     deferred.resolve(response.data);
@@ -83,10 +86,10 @@
             );
             return deferred.promise;
         }
-
+		
 		function getFacebookMetrics() {
             var deferred = $q.defer();
-            $http.get("http://api.musicgraph.com/api/v2/artist/"+$rootScope.artistId+"/metrics/facebook?api_key=6d26fd60ee690f2cdf287654182c69f2").then(
+            $http.get("http://api.musicgraph.com/api/v2/artist/"+id+"/metrics/facebook?api_key=6d26fd60ee690f2cdf287654182c69f2").then(
                 function handleSuccess(response) {
                     console.log('success');
                     deferred.resolve(response.data);
@@ -100,7 +103,7 @@
 
         function getVevoMetrics() {
             var deferred = $q.defer();
-            $http.get("http://api.musicgraph.com/api/v2/artist/"+$rootScope.artistId+"/metrics/vevo?api_key=6d26fd60ee690f2cdf287654182c69f2").then(
+            $http.get("http://api.musicgraph.com/api/v2/artist/"+id+"/metrics/vevo?api_key=6d26fd60ee690f2cdf287654182c69f2").then(
                 function handleSuccess(response) {
                     console.log('success');
                     deferred.resolve(response.data);
@@ -114,7 +117,7 @@
 
         function getLastFmMetrics() {
             var deferred = $q.defer();
-            $http.get("http://api.musicgraph.com/api/v2/artist/"+$rootScope.artistId+"/metrics/lastfm?api_key=6d26fd60ee690f2cdf287654182c69f2").then(
+            $http.get("http://api.musicgraph.com/api/v2/artist/"+id+"/metrics/lastfm?api_key=6d26fd60ee690f2cdf287654182c69f2").then(
                 function handleSuccess(response) {
                     console.log('success');
                     deferred.resolve(response.data);
@@ -128,7 +131,7 @@
 
         function getTwitterMetrics() {
             var deferred = $q.defer();
-            $http.get("http://api.musicgraph.com/api/v2/artist/"+$rootScope.artistId+"/metrics/twitter?api_key=6d26fd60ee690f2cdf287654182c69f2").then(
+            $http.get("http://api.musicgraph.com/api/v2/artist/"+id+"/metrics/twitter?api_key=6d26fd60ee690f2cdf287654182c69f2").then(
                 function handleSuccess(response) {
                     console.log('success');
                     deferred.resolve(response.data);
@@ -139,10 +142,10 @@
             );
             return deferred.promise;
         }
-
+		
 		function getOnlinePrescence() {
             var deferred = $q.defer();
-            $http.get("http://api.musicgraph.com/api/v2/artist/"+$rootScope.artistId+"/social-urls?api_key=6d26fd60ee690f2cdf287654182c69f2").then(
+            $http.get("http://api.musicgraph.com/api/v2/artist/"+id+"/social-urls?api_key=6d26fd60ee690f2cdf287654182c69f2").then(
                 function handleSuccess(response) {
                     console.log('success');
                     deferred.resolve(response.data);
@@ -153,6 +156,6 @@
             );
             return deferred.promise;
         }
-
+		
     });
 })();

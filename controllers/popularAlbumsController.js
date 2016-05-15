@@ -4,16 +4,18 @@
     .module('app')
     .controller('popularAlbumsController', function socialmediaController($scope, $rootScope, $http, $q, $state, $window) {
 
+		if ($rootScope.artistName) $window.sessionStorage.name = $rootScope.artistName;
+		if ($rootScope.artistId) $window.sessionStorage.id = $rootScope.artistId;
+		var name = $rootScope.artistName = $window.sessionStorage.name;
+		$rootScope.alreadySearched = true;
+		
 		$scope.social_media = function(){
-			$location.url('/SocialMediaPrescence');
+			$state.go('socialMedia');
 		}
 
 		$scope.playlist = function(){
-			$location.url('/playlist');
+			$state.go('player');
 		}
-
-		console.log("ARTIST NAME: " + $rootScope.artistName);
-
 		getTopAlbums().then(
             function(response) {
 				$scope.albums = response.data;
@@ -23,10 +25,10 @@
                     console.log(response.data[0].release_date); //release date
             }
         );
-
+		
 		function getTopAlbums() {
             var deferred = $q.defer();
-            $http.get("http://api.musicgraph.com/api/v2/album/search?api_key=6d26fd60ee690f2cdf287654182c69f2&artist_name="+$rootScope.artistName+"&top_rated=true&fields=title,release_date,number_of_tracks,main_genre").then(
+            $http.get("http://api.musicgraph.com/api/v2/album/search?api_key=6d26fd60ee690f2cdf287654182c69f2&artist_name="+name+"&top_rated=true&fields=title,release_date,number_of_tracks,main_genre").then(
                 function handleSuccess(response) {
                     console.log('success');
                     deferred.resolve(response.data);
