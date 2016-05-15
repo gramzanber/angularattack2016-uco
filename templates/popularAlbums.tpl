@@ -1,5 +1,5 @@
-<button ng-click="social_media()" class="btn btn-primary" style="width: 49%; background-color: #7A3014">Social Media</button>
-<button ng-click="playlist()" class="btn btn-primary" style="width: 49%; background-color: #7A3014">Playlist</button>
+<button ui-sref="socialMedia" class="btn btn-primary" style="width: 49%; background-color: #301C16">Social Media</button>
+<button ui-sref="player" class="btn btn-primary" style="width: 49%; background-color: #301C16">Playlist</button>
 <br /><br />
 <div class="container">
   <h2 class="text-center">ALBUMS</h2>

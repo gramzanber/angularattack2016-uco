@@ -1,5 +1,5 @@
-<button ng-click="popular_album()" class="btn btn-primary" style="width: 49%; background-color: #7A3014">Popular Albums</button>
-<button ng-click="playlist()" class="btn btn-primary" style="width: 49%; background-color: #7A3014">Playlist</button>
+<button ui-sref="popularAlbums" class="btn btn-primary" style="width: 49%; background-color: #301C16">Popular Albums</button>
+<button ui-sref="player" class="btn btn-primary" style="width: 49%; background-color: #301C16">Playlist</button>
 <br /><br />
 
 <div ng-if="links" class="container" style="text-align:center;" class="thumbnail">

@@ -8,15 +8,7 @@
 		if ($rootScope.artistName) $window.sessionStorage.name = $rootScope.artistName;
 		var id = $rootScope.artistId = $window.sessionStorage.id; console.log(id);
 		$rootScope.alreadySearched = true;
-		
-		$scope.popular_album = function(){
-			$state.go('popularAlbums');
-		}
 
-		$scope.playlist = function(){
-			$state.go('player');
-		}
-		
 		getSocial().then(
             function(data) {
                 $scope.spotifyurl = data;

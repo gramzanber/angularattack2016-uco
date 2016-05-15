@@ -8,14 +8,7 @@
 		if ($rootScope.artistId) $window.sessionStorage.id = $rootScope.artistId;
 		var name = $rootScope.artistName = $window.sessionStorage.name;
 		$rootScope.alreadySearched = true;
-		
-		$scope.social_media = function(){
-			$state.go('socialMedia');
-		}
 
-		$scope.playlist = function(){
-			$state.go('player');
-		}
 		getTopAlbums().then(
             function(response) {
 				$scope.albums = response.data;
