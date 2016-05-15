@@ -1,9 +1,8 @@
-<button ng-click="social_media()" class="btn btn-primary" style="width: 49%; background-color: #7A3014">Social Media</button>
-<button ng-click="popular_album()" class="btn btn-primary" style="width: 49%; background-color: #7A3014">Popular Albums</button>
-<br /><br />
 <div class="container">
-  <h2 class="text-center">Custom Playlist Videos</h2>
-  <p class="text-center">We have retrieved 8 videos for you based on similar artists</p>
+  <h2 class="text-center"><strong>Custom Playlist of Recommended Videos</strong></h2>
+  <p class="text-center col-xs-6 col-xs-offset-3" style="padding:5px;background-color:#212121;color:white;border-radius:5px">
+	<i class="glyphicon glyphicon-info-sign"></i>
+	We have retrieved 8 videos for you based on similar artists</p>
 </div>
 <table class="table">
 	<tr>
