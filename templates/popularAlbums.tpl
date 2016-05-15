@@ -11,7 +11,7 @@
 		<th>Genre</th>
 		<th>Release Date</th>
 	</tr>
-	<tr ng-repeat="album in albums">
+	<tr ng-repeat="album in albums | orderBy: '-release_date'">
 		<td>{{album.title}}</td>
 		<td>{{album.number_of_tracks}}</td>
 		<td>{{album.main_genre}}</td>
