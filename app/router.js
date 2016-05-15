@@ -34,6 +34,9 @@
                     url: "/settings",
                     templateUrl: "templates/settings.tpl",
                     controller: 'settings_Controller',
+                    resolve: {
+                      function($rootScope){ if(!$rootScope.logged_in) { $state.go("login"); }}
+                    },
                 })
                 .state('register', {
                     url: "/register",
