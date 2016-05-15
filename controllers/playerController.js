@@ -6,6 +6,10 @@
 
 			if ($rootScope.artistId) $window.sessionStorage.id = $rootScope.artistId;
 			if ($rootScope.artistName) $window.sessionStorage.name = $rootScope.artistName;
+
+			var name = $rootScope.artistName = $window.sessionStorage.name;
+			var id = $rootScope.artistId = $window.sessionStorage.id; console.log(id);
+
 			var id = $rootScope.artistId = $window.sessionStorage.id; 
 			var name = $rootScope.artistName = $window.sessionStorage.name;
 			$rootScope.alreadySearched = true;
@@ -20,7 +24,7 @@
 
 	function getTopVideo() {
             var deferred = $q.defer();
-            $http.get("http://api.musicgraph.com/api/v2/playlist?api_key=6d26fd60ee690f2cdf287654182c69f2&artist_ids="+id+"&limit=10").then(
+            $http.get("http://api.musicgraph.com/api/v2/playlist?api_key=6d26fd60ee690f2cdf287654182c69f2&artist_ids="+id+"&limit=5").then(
                 function handleSuccess(response) {
                     console.log('success');
                     deferred.resolve(response.data);
