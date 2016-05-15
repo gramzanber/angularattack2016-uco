@@ -7,6 +7,7 @@
 		if ($rootScope.artistId) $window.sessionStorage.id = $rootScope.artistId;
 		if ($rootScope.artistName) $window.sessionStorage.name = $rootScope.artistName;
 		var id = $rootScope.artistId = $window.sessionStorage.id; console.log(id);
+		var name = $rootScope.artistName = $window.sessionStorage.name;
 		$rootScope.alreadySearched = true;
 
 		getSocial().then(

@@ -1,3 +1,5 @@
+<h1 class="text-center col-xs-6 col-xs-offset-3" style="text-family:impact;background-color:#212121; color:white; padding: 10px; border-radius: 10px"><strong>{{artistName}} - LINKS<strong></h1>
+
 <div ng-if="links" class="container" style="text-align:center;" class="thumbnail">
 	<label class="text-center" style="width:100%">Framed Links</label>
 	<a ng-if="links.official" data-toggle="collapse" data-target="#official" class="image">
