@@ -2,8 +2,11 @@
 <button ng-click="popular_album()" class="btn btn-primary" style="width: 49%; background-color: #7A3014">Popular Albums</button>
 <br /><br />
 <div class="container">
-	<audio id="audioPlayer" ng-src="{{trustSrc(currentSong.source)}}" controls style="width:100%"><p>Failed to load... </p></audio>
-	<br /><br />
+	
+<iframe width="420" height="315"
+src="http://www.youtube.com/embed/XGSy3_Czz8k?autoplay=1">
+</iframe>
+
 	<table class="table table-bordered" style="width:70%; margin-left:15%; table-layout: fixed; background-color:rgb(71,71,71); color: white; border-radius:0 0 10px 10px">
 		<tr>
 			<th style="text-align:center">Play</th>
