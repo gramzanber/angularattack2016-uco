@@ -11,7 +11,7 @@
     <button ng-click="search()" class="btn btn-primary" style="width: 100%; background-color: #7A3014" type="submit">Search for music like a champ!</button>
   </form>
 </div>
-<div ng-repeat="result in search">
+<div ng-if="display_search" ng-repeat="result in search">
   {{result.artist}}<br />
   {{result.title}}<br />
   {{result.album}}<br />
