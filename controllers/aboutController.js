@@ -17,7 +17,7 @@
     $scope.programmers[2] = {
       name: "Tyrel Tachibana",
       bio: "Seasoned programmer whom is still proned to beginner mistakes, like forgetting to delcare my array first!",
-      picture: "https://avatars2.githubusercontent.com/u/15151458?v=3&s=400"
+      picture: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAYtAAAAJGNlYTg1NjQwLTZjN2ItNGE0ZS1hOGIwLTM0MjFlOTIyNzEwZg.jpg"
     }
 
     });

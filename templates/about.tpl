@@ -1,5 +1,5 @@
-<p><b>Hello fellow software and technology enthusiasts!</b><br><br>
-
+<b>Hello fellow software and technology enthusiasts!</b>
+<br /><br />
 We are all full-time students attending a public university in Oklahoma where we all expect to graduate with Computer Science
 degrees very soon.<br>
 We decided to participate in this competition due to our growing passion and interests for web development. We joined <b>AngularAttack</b>
@@ -29,4 +29,4 @@ Our team members:
   </div>
 </div>
 <br />
-<b>Thanks for stopping by!</b></p>
+<b>Thanks for stopping by!</b>
