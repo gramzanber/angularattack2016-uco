@@ -9,8 +9,8 @@
     $scope.authenticate = function(user,password){
       $window.sessionStorage.logged_in = true,
       $window.sessionStorage.is_admin = false;
-      $rootScope.logged_in = $window.sessionStorage.logged_in;
-      $rootScope.is_admin = $window.sessionStorage.is_admin;
+      $rootScope.logged_in = true;
+      $rootScope.is_admin = false;
       $state.go('player');
     }
     })
