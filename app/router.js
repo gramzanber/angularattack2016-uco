@@ -33,6 +33,7 @@
 				.state('about', {
 					url: "/about",
 					templateUrl: "templates/about.tpl",
+          controller: 'aboutController',
 				})
                 ;
         });
