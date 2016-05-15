@@ -56,9 +56,9 @@
     $scope.states = [];
 
     $scope.onedit = function(param){
-    $scope.states = [];
+		$scope.states = [];
 
-    getArtists(param).then(
+		getArtists(param).then(
               function(response) {
                 if(param) {
                 for(var i = 0; i < 5; i++)

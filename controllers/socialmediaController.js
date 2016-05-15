@@ -2,7 +2,7 @@
     'use strict';
     angular
     .module('app')
-    .controller('socialmediaController', function socialmediaController($scope, $rootScope, $http, $q, $state, $window) {
+    .controller('socialmediaController', function socialmediaController($scope, $rootScope, $http, $q, $state, $window, $sce) {
 
 		if ($rootScope.artistId) $window.sessionStorage.id = $rootScope.artistId;
 		if ($rootScope.artistName) $window.sessionStorage.name = $rootScope.artistName;
@@ -28,23 +28,23 @@
 
 		getOnlinePrescence().then(
             function(response) {
-				$scope.links.official = response.data.official_url[0];
+				$scope.links.official = $sce.trustAsResourceUrl(response.data.official_url[0]);
 					console.log(response.data.official_url[0]); //official
-				$scope.links.lastfm = response.data.lastfm_url[0]
+				$scope.links.lastfm = $sce.trustAsResourceUrl(response.data.lastfm_url[0]);
                     console.log(response.data.lastfm_url[0]); //lastfm
-				$scope.links.facebook = "https://www.facebook.com/" + response.data.facebook_username;
+				$scope.links.facebook = $sce.trustAsResourceUrl("https://www.facebook.com/" + response.data.facebook_username);
                     console.log("https://www.facebook.com/" + response.data.facebook_username); //facebook
-                $scope.links.vevo = response.data.vevo_url[0];
+                $scope.links.vevo = $sce.trustAsResourceUrl(response.data.vevo_url[0]);
 					console.log(response.data.vevo_url[0]); //vevo
-                $scope.links.wiki = response.data.wikipedia_url[0]
+                $scope.links.wiki = $sce.trustAsResourceUrl(response.data.wikipedia_url[0]);
 					console.log(response.data.wikipedia_url[0]); //wiki
-				$scope.links.twitter = response.data.twitter_url[0]
+				$scope.links.twitter = $sce.trustAsResourceUrl(response.data.twitter_url[0]);
                     console.log(response.data.twitter_url[0]); //twitter
-				$scope.links.spotify = response.data.spotify_url[0]
+				$scope.links.spotify = $sce.trustAsResourceUrl(response.data.spotify_url[0]);
                     console.log(response.data.spotify_url[0]); //spotify
-				$scope.links.youtube = response.data.youtube_url[0]
+				$scope.links.youtube = $sce.trustAsResourceUrl(response.data.youtube_url[0]);
                     console.log(response.data.youtube_url[0]); //youtube
-				$scope.links.instagram = response.data.instagram_url[0]
+				$scope.links.instagram = $sce.trustAsResourceUrl(response.data.instagram_url[0]);
                     console.log(response.data.instagram_url[0]); //instagram
                 }
         );
