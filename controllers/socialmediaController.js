@@ -2,20 +2,20 @@
     'use strict';
     angular
     .module('app')
-    .controller('socialmediaController', function socialmediaController($scope, $rootScope, $http, $q, $state, $window) {
+    .controller('socialmediaController', function socialmediaController($scope, $rootScope, $http, $q, $state, $window, $location) {
 
 		$scope.links = {};
-		
+
 		$scope.popular_album = function(){
-			$state.go('popularAlbums');
+			$location.url('/popularAlbums');
 		}
 
 		$scope.playlist = function(){
-			$state.go('player');
+			$location.url('/playlist');
 		}
-		
+
 		console.log("ARTIST ID: " + $rootScope.artistId);
-		
+
 		getSocial().then(
             function(data) {
                 $scope.spotifyurl = data;
@@ -45,7 +45,7 @@
                     console.log(response.data.instagram_url[0]); //instagram
                 }
         );
-			
+
 		getFacebookMetrics().then(
                 function(response) {
 					console.log(response.data.facebook.likes.data.value); //likes
@@ -69,7 +69,7 @@
 					console.log(response.data.twitter.followers.data.value); //followers
                 }
         );
-		
+
 		function getSocial() {
             var deferred = $q.defer();
             $http.get("http://api.musicgraph.com/api/v2/artist/"+$rootScope.artistId+"/metrics?api_key=6d26fd60ee690f2cdf287654182c69f2").then(
@@ -83,7 +83,7 @@
             );
             return deferred.promise;
         }
-		
+
 		function getFacebookMetrics() {
             var deferred = $q.defer();
             $http.get("http://api.musicgraph.com/api/v2/artist/"+$rootScope.artistId+"/metrics/facebook?api_key=6d26fd60ee690f2cdf287654182c69f2").then(
@@ -139,7 +139,7 @@
             );
             return deferred.promise;
         }
-		
+
 		function getOnlinePrescence() {
             var deferred = $q.defer();
             $http.get("http://api.musicgraph.com/api/v2/artist/"+$rootScope.artistId+"/social-urls?api_key=6d26fd60ee690f2cdf287654182c69f2").then(
@@ -153,6 +153,6 @@
             );
             return deferred.promise;
         }
-		
+
     });
 })();

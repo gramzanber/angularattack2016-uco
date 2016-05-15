@@ -77,11 +77,11 @@
 	}
 
   $scope.social_media = function(){
-    $state.go('socialMedia');
+    $location.url('/SocialMediaPrescence');
   }
 
   $scope.popular_album = function(){
-    $state.go('popularAlbums');
+    $location.url('/popularAlbums');
   }
     });
 })();

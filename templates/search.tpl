@@ -2,7 +2,7 @@
   <h1 class="text-center"> <strong>All About Music</strong> </h1>
   <form>
     <div class="input-group input-group-sm">
-      <input class="form-control" ng-model="param" type="text" placeholder="Type your favorite artist or band.." autofocus required>
+      <input type="text" class="form-control" ng-change="onedit(param)" ng-model="param" typeahead="state for state in states | filter:$viewValue" placeholder="Type your favorite artist or band.." autofocus required>
       <span class="input-group-addon" ng-click="search(param)">
         <span class="glyphicon glyphicon-music"></span>
       </span>
@@ -11,4 +11,4 @@
     <button ng-click="search(param)" class="btn btn-primary" style="width: 100%; background-color: #7A3014" type="submit">Advance!</button>
   </form>
 </div>
-</div>
+<pre>{{states}}</pre>
