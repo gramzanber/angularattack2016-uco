@@ -1,5 +1,6 @@
 <div class="container">
-  <h2 class="text-center"><strong>{{artistName}} - ALBUMS</strong></h2>
+  <h2 class="text-center col-xs-6 col-xs-offset-3" style="background-color:#212121; color: white; border-radius: 10px; padding: 10px">
+	<strong>{{artistName}} - ALBUMS</strong></h2>
 </div>
 <table class="table">
 	<tr>

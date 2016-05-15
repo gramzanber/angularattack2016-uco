@@ -1,10 +1,9 @@
-<div class="container">
+<div class="container col-xs-6 col-xs-offset-3" style="background-color:#212121; color:white; border-radius: 10px; padding:10px; margin-bottom: 20px">
   <h2 class="text-center"><strong>Custom {{artistName}} Playlist</strong></h2>
-  <p class="text-center">We have retrieved 5 songs that we think you may like based on the selected artist/band's style of music.</p>
-  <h2 class="text-center"><strong>Custom Playlist of Recommended Videos</strong></h2>
-  <p class="text-center col-xs-6 col-xs-offset-3" style="padding:5px;background-color:#212121;color:white;border-radius:5px">
+  <p class="text-center" style="font-size:10px">
 	<i class="glyphicon glyphicon-info-sign"></i>
-	We have retrieved 5 videos for you based on similar artists</p>
+	We have retrieved 5 songs that we think you may like based on the selected artist/band's style of music.
+  </p>
 </div>
 <table class="table">
 	<tr>
