@@ -19,16 +19,25 @@
                     url: "/upload",
                     templateUrl: "templates/upload.tpl",
                     controller: 'upload_Controller',
+                    resolve: {
+                      function($rootScope){ if(!$rootScope.logged_in) { $state.go("login"); }}
+                    },
                 })
                 .state('administration', {
                     url: "/administration",
                     templateUrl: "templates/administration_page.tpl",
                     controller: 'administration_Controller',
+                    resolve: {
+                      function($rootScope){ if(!$rootScope.logged_in && !$rootScope.is_admin) { $state.go("login"); }}
+                    },
                 })
                 .state('player', {
                     url: "/player",
                     templateUrl: "templates/player.tpl",
                     controller: 'playerController',
+                    resolve: {
+                      function($rootScope){ if(!$rootScope.logged_in) { $state.go("login"); }}
+                    },
                 })
                 .state('settings', {
                     url: "/settings",
