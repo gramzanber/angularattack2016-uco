@@ -1,5 +1,5 @@
 <div class="container">
-  <h2 class="text-center"><strong>{{artistName}} - TOP 5 ALBUMS</strong></h2>
+  <h2 class="text-center"><strong>{{artistName}} - ALBUMS</strong></h2>
 </div>
 <table class="table">
 	<tr>
