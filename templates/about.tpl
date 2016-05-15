@@ -1,5 +1,6 @@
-<b>Hello fellow software and technology enthusiasts!</b>
+<h2 class="text-center"><strong>Hello fellow software and technology enthusiasts!</strong></h2>
 <br /><br />
+<div class="col-xs-8 col-xs-offset-2">
 We are all full-time students attending a public university in Oklahoma where we all expect to graduate with Computer Science
 degrees very soon.<br>
 We decided to participate in this competition due to our growing passion and interests for web development. We joined <b>AngularAttack</b>
@@ -13,20 +14,25 @@ For icons used in this app we used <a href="https://icons8.com/">Icon8</a>.<br>
 For the data gathered we used <a href="musicgraph.com/#/home">musicGraph's</a> API which is definitely worth looking into if you are interested.<br><br>
 We are thankful for the experience that we have gained through this competition and we will all definitely continue to use AngularJs to assist
 us in developing applications both professionally and in personal projects.<br><br>
+</div>
 
-Our team members:
-<div class="container">
-  <div ng-repeat="programmer in programmers">
+<div class="col-xs-8 col-xs-offset-2">
+<label> Our team members: </label>
+<div class="container" style="margin-top:20px">
+  <div ng-repeat="programmer in programmers" style="display:inline-flex; margin: 20px">
     <div>
-      <img src="{{programmer.picture}}" />
+      <img src="{{programmer.picture}}" style="border-radius:5px; min-width:150px; min-height: 150px"/>
     </div>
-    <div>
-      Name: {{programmer.name}}
-    </div>
-    <div>
-      Bio: {{programmer.bio}}
-    </div>
+	<div class="col-xs-4" style="padding-left: 10px; border: groove; border-radius: 10px">
+		<div>
+			<label>Name: </label> {{programmer.name}}
+		</div>	
+		<div>
+			<label>Bio: </label> <br>{{programmer.bio}}
+		</div>
+	</div>
   </div>
 </div>
 <br />
 <b>Thanks for stopping by!</b>
+</div>
