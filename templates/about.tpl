@@ -23,13 +23,18 @@ us in developing applications both professionally and in personal projects.<br><
     <div>
       <img src="{{programmer.picture}}" style="border-radius:5px; min-width:150px; min-height: 150px"/>
     </div>
-	<div class="col-xs-4" style="padding-left: 10px; border: groove; border-radius: 10px">
+	<div class="col-xs-4" style="padding-left: 10px; border: groove; border-radius: 10px; max-width:40%">
 		<div>
 			<label>Name: </label> {{programmer.name}}
 		</div>	
 		<div>
 			<label>Bio: </label> <br>{{programmer.bio}}
 		</div>
+        <div>
+        <a href="https://github.com/{{programmer.githubid}}" target="_blank">
+            <img src="/images/Github-48.png"/>
+        </a>
+        </div>
 	</div>
   </div>
 </div>
