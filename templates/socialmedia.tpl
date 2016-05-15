@@ -1,4 +1,6 @@
+<button ng-click="popular_album()" class="btn btn-primary" style="width: 49%; background-color: #7A3014">Popular Albums</button>
+<button ng-click="playlist()" class="btn btn-primary" style="width: 49%; background-color: #7A3014">Playlist</button>
+<br /><br />
 <div class="container">
-<span>Twitter:</span>
-<button ng-click="search($root.artistId)" class="btn btn-primary" style="width: 100%; background-color: #7A3014" type="submit">Advance!</button>
+  <span>Twitter:</span>
 </div>

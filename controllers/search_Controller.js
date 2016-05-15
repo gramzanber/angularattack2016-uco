@@ -67,8 +67,8 @@
                 }
             );
 
-            $rootScope.alreadySearched = true;  
-            $state.go('socialmedia');
+            $rootScope.alreadySearched = true;
+            $state.go('socialMedia');
 		}
 
 		function getArtistInfo(param) {

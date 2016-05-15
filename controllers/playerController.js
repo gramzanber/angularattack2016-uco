@@ -75,5 +75,13 @@
   $scope.search = function() {
 		$state.go("search");
 	}
+
+  $scope.social_media = function(){
+    $state.go('socialMedia');
+  }
+
+  $scope.popular_album = function(){
+    $state.go('popularAlbums');
+  }
     });
 })();

@@ -2,7 +2,7 @@
     'use strict';
     angular
     .module('app')
-    .controller('socialmediaController', function socialmediaController($scope, $rootScope, $http, $q, $state, $window) {
+    .controller('popularAlbumsController', function socialmediaController($scope, $rootScope, $http, $q, $state, $window) {
 
 		$scope.search = function(param){ console.log(param);
 			getResults(param).then(
@@ -14,8 +14,8 @@
             $state.go('player');
 		}
 
-    $scope.popular_album = function(){
-			$state.go('popularAlbums');
+    $scope.social_media = function(){
+			$state.go('socialMedia');
 		}
 
     $scope.playlist = function(){

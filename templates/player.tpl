@@ -1,3 +1,6 @@
+<button ng-click="social_media()" class="btn btn-primary" style="width: 49%; background-color: #7A3014">Social Media</button>
+<button ng-click="popular_album()" class="btn btn-primary" style="width: 49%; background-color: #7A3014">Popular Albums</button>
+<br /><br />
 <div class="container">
 	<audio id="audioPlayer" ng-src="{{trustSrc(currentSong.source)}}" controls style="width:100%"><p>Failed to load... </p></audio>
 	<br /><br />
