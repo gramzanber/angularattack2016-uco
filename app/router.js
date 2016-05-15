@@ -30,6 +30,10 @@
                     templateUrl: "templates/player.tpl",
                     controller: 'playerController',
                 })
+				.state('about', {
+					url: "/about",
+					templateUrl: "templates/about.tpl",
+				})
                 ;
         });
 })();
