@@ -62,11 +62,6 @@
                 if(param) {
                 for(var i = 0; i < 5; i++)
                 {
-                  var value = "";
-
-                  for(var j = 0; j < i; j++){
-                    value += j;
-                  }
                   $scope.states.push(response.data[i].name);
                 }
               }
