@@ -42,6 +42,31 @@
                     console.log(response.data.instagram_url[0]); //instagram
                 }
             );
+            
+            getFacebookMetrics(param).then(
+                function(response) {
+					console.log(response.data.facebook.likes.data.value); //likes
+                }
+            );
+            
+            getVevoMetrics(param).then(
+                function(response) {
+					console.log(response.data.vevo.viewsTotal.data.value); //views
+                }
+            );
+            
+            getLastFmMetrics(param).then(
+                function(response) {
+					console.log(response.data.lastfm.playcount.data.value); //clicks
+                }
+            );
+            
+            getTwitterMetrics(param).then(
+                function(response) {
+					console.log(response.data.twitter.followers.data.value); //followers
+                }
+            );
+            
             $state.go('socialmedia');
 		}
 		
@@ -90,6 +115,62 @@
         function getOnlinePrescence(param) {
             var deferred = $q.defer();
             $http.get("http://api.musicgraph.com/api/v2/artist/ee2564c7-a6b5-11e0-b446-00251188dd67/social-urls?api_key=6d26fd60ee690f2cdf287654182c69f2").then(
+                function handleSuccess(response) {
+                    console.log('success');
+                    deferred.resolve(response.data);
+                },
+                function handleError(response) {
+                    console.log('failure');
+                }
+            );
+            return deferred.promise;
+        }
+        
+        function getFacebookMetrics(param) {
+            var deferred = $q.defer();
+            $http.get("http://api.musicgraph.com/api/v2/artist/ee2564c7-a6b5-11e0-b446-00251188dd67/metrics/facebook?api_key=6d26fd60ee690f2cdf287654182c69f2").then(
+                function handleSuccess(response) {
+                    console.log('success');
+                    deferred.resolve(response.data);
+                },
+                function handleError(response) {
+                    console.log('failure');
+                }
+            );
+            return deferred.promise;
+        }
+        
+        function getVevoMetrics(param) {
+            var deferred = $q.defer();
+            $http.get("http://api.musicgraph.com/api/v2/artist/ee2564c7-a6b5-11e0-b446-00251188dd67/metrics/vevo?api_key=6d26fd60ee690f2cdf287654182c69f2").then(
+                function handleSuccess(response) {
+                    console.log('success');
+                    deferred.resolve(response.data);
+                },
+                function handleError(response) {
+                    console.log('failure');
+                }
+            );
+            return deferred.promise;
+        }
+        
+        function getLastFmMetrics(param) {
+            var deferred = $q.defer();
+            $http.get("http://api.musicgraph.com/api/v2/artist/ee2564c7-a6b5-11e0-b446-00251188dd67/metrics/lastfm?api_key=6d26fd60ee690f2cdf287654182c69f2").then(
+                function handleSuccess(response) {
+                    console.log('success');
+                    deferred.resolve(response.data);
+                },
+                function handleError(response) {
+                    console.log('failure');
+                }
+            );
+            return deferred.promise;
+        }
+        
+        function getTwitterMetrics(param) {
+            var deferred = $q.defer();
+            $http.get("http://api.musicgraph.com/api/v2/artist/ee2564c7-a6b5-11e0-b446-00251188dd67/metrics/twitter?api_key=6d26fd60ee690f2cdf287654182c69f2").then(
                 function handleSuccess(response) {
                     console.log('success');
                     deferred.resolve(response.data);
