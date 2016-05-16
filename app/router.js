@@ -20,7 +20,7 @@
                     templateUrl: "templates/upload.tpl",
                     controller: 'upload_Controller',
                     resolve: {
-                      function($rootScope){ if(!$rootScope.logged_in) { $state.go("login"); }}
+                      function($rootScope, $location){ if(!$rootScope.logged_in) { $location.path('/'); }}
                     },
                 })
                 .state('administration', {
@@ -28,7 +28,7 @@
                     templateUrl: "templates/administration_page.tpl",
                     controller: 'administration_Controller',
                     resolve: {
-                      function($rootScope){ if(!$rootScope.logged_in && !$rootScope.is_admin) { $state.go("login"); }}
+                      function($rootScope, $location){ if(!$rootScope.logged_in && !$rootScope.is_admin) { $location.path('/'); }}
                     },
                 })
                 .state('player', {
@@ -36,7 +36,7 @@
                     templateUrl: "templates/player.tpl",
                     controller: 'playerController',
                     resolve: {
-                      function($rootScope){ if(!$rootScope.logged_in) { $state.go("login"); }}
+                      function($rootScope, $location){ if(!$rootScope.logged_in) { $location.path('/'); }}
                     },
                 })
                 .state('settings', {
@@ -44,7 +44,7 @@
                     templateUrl: "templates/settings.tpl",
                     controller: 'settings_Controller',
                     resolve: {
-                      function($rootScope){ if(!$rootScope.logged_in) { $state.go("login"); }}
+                      function($rootScope, $location){ if(!$rootScope.logged_in) { $location.path('/'); }}
                     },
                 })
                 .state('register', {
